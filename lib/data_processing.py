@@ -1,19 +1,23 @@
-# This module contains functions to process student data.
+# filter.py
+# This module contains functions for filtering and grouping student data.
+
+"""1. Return a formatted string for a single student record.
+    Converts the student tuple into a dictionary first so that each
+    field is explicitly named, making the f-string easier to read and maintain.
+    """
+"""2. Loop through all students and print each one's formatted details."""
 
 def format_student_data(student):
-    """
-    Format student data for display.
-    The function should return a formatted string containing:
-    - Student ID
-    - Student Name
-    - Major
-    such as: "ID: 10 | Name: Louis Medina | Major: Computer Science"
-    """
-    pass
+    student_dict = {
+        "id": student[0],
+        "name": student[1],
+        "major": student[2]
+    }
+    return f"ID: {student_dict['id']} | Name: {student_dict['name']} | Major: {student_dict['major']}"
+    
 
 def display_students(student_list):
-    """
-    Display all student records.
-    Loop through the student_list and print each student using format_student_data().
-    """
-    pass
+    for student in student_list:
+        print(format_student_data(student))
+
+    
