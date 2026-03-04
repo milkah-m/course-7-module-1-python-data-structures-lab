@@ -5,12 +5,8 @@
     The comparison is case-insensitive to handle varied user input.
     """
 
-def group_students_by_major(student_list):
-    return {
-        major: [s for s in student_list if s[2] == major]
-        for major in {s[2] for s in student_list}
-    }
-
+def filter_students_by_major(students, major):
+    return [student for student in students if student[2] == major]
 
 
 
